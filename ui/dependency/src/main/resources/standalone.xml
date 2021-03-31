@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
+	<!-- standalone list -->
+	
+	<util:list list-class="java.util.LinkedList" id="mybestfriend">
+		<value>Ajay</value>
+		<value>Suraj</value>
+		<value>Raj</value>
+	</util:list>
+	
+	<util:map map-class="java.util.HashMap" id="fees">
+		<entry key="Java" value="20000" />
+		<entry key="Spring" value="30000" />
+		<entry key="Hibernate" value="40000" />
+	</util:map>
+	
+	<util:properties id="dbconfig">
+		<prop key="driver">com.mysql.jdbc.driver</prop>
+		<prop key="username">root</prop>
+		<prop key="password">root</prop>
+	</util:properties>
+	
+	<bean class="com.springcore.standalone.collections.Person" name="person">
+		<!-- <property name="friends">
+			<ref bean="mybestfriend" />
+		</property> -->
+		<property name="friends" ref="mybestfriend" />
+		<property name="fees" ref="fees"></property>
+		<property name="properties" ref="dbconfig" />
+	</bean>    
+</beans>
