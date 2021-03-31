@@ -6,11 +6,11 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-	<context:annotation-config></context:annotation-config>
-	<bean class="com.springcore.autowiring.Address" name="address">
+
+	<bean class="com.springcore.autowiringAnnotation.Address" name="address">
 		<property name="street" value="chowk123" />
 		<property name="city" value="Mumbail"></property>
 	</bean>
-	<bean class="com.springcore.autowiring.Employee" name="employee" autowire="byName"></bean>
+	<bean class="com.springcore.autowiringAnnotation.Employee" name="employee" autowire="byName"></bean>
         
 </beans>
