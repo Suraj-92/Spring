@@ -16,4 +16,5 @@
 		<value>Pune</value>
 		<value>Nagpur</value>
 	</util:list>
+	<bean class="com.springcore.stereoType.Teacher" name="teacher" scope="prototype"></bean>
 </beans>
